@@ -1,0 +1,15 @@
+Macro do Ovo v6.0
+
+1) Extraia esta pasta inteira (mantenha a pasta macroovo ao lado do ovo_macro.py).
+2) Para gerar o programa: de dois cliques em criar_exe.bat. O .exe fica na pasta dist.
+3) Para testar sem gerar o .exe: python ovo_macro.py (precisa de: pip install pynput).
+
+Resumo das atualizacoes: edite macroovo\novidades.py e acrescente uma linha no topo da lista.
+Seus ajustes e a calibracao continuam em %APPDATA%\MacroOvo e sao aproveitados.
+
+Novidades da 5.2: aba Ajuda, guia de primeiros passos no Painel, icone ? explicando cada ajuste, atalhos na barra lateral.
+Novidades da 6.0: interface totalmente nova, em cores claras e suaves, com abas no topo e painel simplificado.
+Novidades da 6.2: aba Opções com atalhos do teclado personalizáveis, opacidade do modo mini, abrir com o Windows (janela, mini ou bandeja) e tema claro ou escuro.
+Novidades da 6.3: AutoClick com posição fixa (Definir posição) e opção de parar sozinho se você mexer o mouse além de uma distância escolhida (padrão 150 px).
+
+SEM GERAR O .EXE: de dois cliques em Abrir.bat. Ele abre o programa direto do código (precisa do Python instalado). Para atualizar, basta trocar os arquivos pelos da versão nova: não precisa rodar o criar_exe.bat.
