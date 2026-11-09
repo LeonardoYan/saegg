@@ -1,10 +1,44 @@
-Roube um Ovo v1.0
+Roube um Ovo v1.1
 
 1) Extraia esta pasta inteira (mantenha a pasta macroovo ao lado do ovo_macro.py).
 2) Para abrir sem gerar o .exe: de dois cliques em Abrir.bat (precisa do Python instalado).
 3) Para gerar o programa: de dois cliques em criar_exe.bat. O .exe fica na pasta dist.
 
-Atalhos padrao: F1 Pesca, F2 AutoClick, F3 Calibrar, Esc Parar. Podem ser trocados na aba Opcoes.
+Atalhos padrao: F1 Pesca, F2 AutoClick, F3 Calibrar, F4 Enviar clipe, Esc Parar. Podem ser trocados na aba Opcoes.
 Seus ajustes e a calibracao ficam em %APPDATA%\MacroOvo.
 
 Resumo das atualizacoes: edite macroovo\novidades.py e acrescente uma linha no topo da lista.
+
+Atualizacoes: em Ajustes > Sobre, o botao "Verificar atualizacoes" consulta github.com/LeonardoYan/saegg (releases).
+Rodando pelo Abrir.bat, o botao vira "Instalar atualizacao": baixa o zip da release, troca os arquivos do programa
+(guarda a versao anterior na pasta _versao_anterior) e reabre sozinho. Seus ajustes ficam em %APPDATA%\MacroOvo e nao mudam.
+No .exe o botao so abre a pagina de download (gere o .exe de novo com criar_exe.bat).
+Para publicar: crie uma release com a tag v1.1, v1.2... e anexe o zip do programa.
+
+Ao iniciar a pesca ou o AutoClick, o programa vai sozinho para o modo mini (a menos que esteja escondido na bandeja). Para voltar, use o botao Abrir do mini.
+
+Clipe da pesca (v1.1): com o aviso do Discord configurado (aba Registro), o programa guarda na memoria um timelapse da tela do Roblox
+(1 a 15 minutos). Quando a pesca para por falhas seguidas, um VIDEO (MP4) vai ao Discord com um quadro legendado em cada falha.
+O botao "Enviar clipe agora" (ou F4) manda o clipe na hora. Precisa do Pillow e do imageio-ffmpeg (o video): o Abrir.bat e o criar_exe.bat instalam sozinhos. Sem o video, o clipe vai em GIF.
+Quando a vara sai da mao e o macro a equipa de novo pelo inventario, o clipe tambem vai ao Discord (no maximo um a cada 5 minutos),
+e depois chega um aviso dizendo se a pesca voltou. Da para desligar em Calibrar > "Enviar clipe ao equipar".
+
+Vara ja equipada (v1.1): em Calibrar, "Vara equipada?" ensina o macro a ver se a vara ja esta na mao. Com o inventario aberto e a vara
+equipada, leve o mouse ate ela e clique em Equipada; depois guarde a vara e clique em Guardada (so a primeira ja ajuda). Quando a
+pesca falhar, o macro abre o inventario, confere e so clica na vara se ela NAO estiver equipada (clicar de novo a guardaria).
+Se a vara ja estava equipada, ele avisa que o problema e outro e nao mexe nela.
+
+Registro no Discord (v1.1): na aba Registro, o botao "Registro no Discord" escolhe o que vai ao Discord pelo mesmo webhook: Desligado, So problemas (padrao: avisos e erros), Importante ou Tudo. As linhas vao em lotes a cada ~10 segundos.
+
+Controle pelo Discord (v1.1): em Opcoes > "Controle pelo Discord". Comandos escritos no canal escolhido: !iniciar (pesca), !autoclick, !parar, !status, !clipe, !print, !mouse, !ajuda.
+Se o Roblox estiver fechado, o macro apenas avisa e nao inicia nada. O programa precisa estar aberto (pode ficar na bandeja).
+Como configurar: 1) discord.com/developers > New Application > Bot > Reset Token (copie o token). 2) Na aba Bot, ligue "Message Content Intent".
+3) Em OAuth2 > URL Generator marque "bot" e as permissoes Ver canais, Enviar mensagens e Ler historico; abra o link e adicione o bot ao seu servidor.
+4) No Discord, ative o Modo Desenvolvedor, clique com o botao direito no canal > Copiar ID. 5) Cole o token e o ID no programa e ligue o interruptor.
+Use um canal PRIVADO: quem puder escrever nele controla o macro. O token fica so neste computador; nao compartilhe.
+
+!print manda uma foto da tela do Roblox (ou a tela inteira, se o jogo estiver fechado) no canal. O ponteiro do mouse aparece como um circulo vermelho.
+O !mouse ja manda um print logo depois de mover, para voce ver onde o ponteiro ficou.
+!mouse move o ponteiro: "!mouse cima 50" (tambem baixo, esquerda, direita; sem numero = 50 px, no maximo 500 por comando),
+"!mouse centro" (centro da janela do Roblox) e "!mouse 60 40" (60% da largura e 40% da altura da janela). O ponteiro nunca sai
+da janela do Roblox, e mover o mouse por comando nao faz o AutoClick parar. Com o Roblox fechado, o !mouse nao faz nada.
